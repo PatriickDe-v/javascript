@@ -1,0 +1,12 @@
+<meta charset="UTF-8">
+<script>
+    const preco = Number(prompt('Qual valor do produto: '))  //recebe os dados
+
+    const desconto = preco * 0.10 
+    const totalDesconto = preco - desconto
+    const precoParcelado = preco / 3                        //processa os dados
+
+    alert(`Preço R$: ${preco}\nÀ vista R$: ${totalDesconto.toFixed(2)}\nOu 3x R$: ${precoParcelado.toFixed(2)}`) //saida dos dados
+
+
+</script>
