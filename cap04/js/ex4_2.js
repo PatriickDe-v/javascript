@@ -17,6 +17,9 @@ frm.addEventListener("submit", (e) => {
         peso = 21 * Math.pow(altura, 2)                 //Processamento dos dados    
     }
 
+frm.addEventListener("reset", () => {
+    resp.innerText = "" //limpa o conteudo exibido no h3 
+})
     //Apresenta a resposta (altera o conteúdo ao h3 da página)
     resp.innerText = `${nome}: Seu peso ideal é ${peso.toFixed(3)} kg`
 
