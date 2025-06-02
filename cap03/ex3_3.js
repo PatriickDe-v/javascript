@@ -5,12 +5,12 @@ o número de quadriênios a que o funcionário tem direito e o salário final */
 const prompt = require("prompt-sync")() //adiciona os pacotes no programa
 
 const salario = Number(prompt("Salário R$: "))
-const tempo = Number(prompt("Tempo (anos): "))
+const tempo = Number(prompt("Tempo (anos): "))  //le os dados de entrada
 
 
-const quadrienio = Math.floor(tempo / 4)
-const acrescimo = salario * tempo / 100
+const quadrienio = Math.floor(tempo / 4)    // calcula quadrienios
+const acrescimo = salario * tempo / 100     // tbm os acrescimemos    
 const total = salario + acrescimo
 
 console.log(`Quadriênio: ${quadrienio}`)
-console.log(`Salário final R$: ${total.toFixed(2)}`)
+console.log(`Salário final R$: ${total.toFixed(2)}`)    // exibe as respostas 
