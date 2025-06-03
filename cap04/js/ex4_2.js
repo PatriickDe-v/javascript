@@ -10,16 +10,16 @@ frm.addEventListener("submit", (e) => {
     const masculino = frm.inMasculino.value             //entrada de dados
     const altura = Number(frm.inAltura.value)
 
-    let peso            //declara a variável peso
-    if (masculino) {    //se masculino (ou, if masculino == true)
-        peso = 22 * Math.pow(altura, 2)   //Math.pow eleva ao quadrado
-    } else {
-        peso = 21 * Math.pow(altura, 2)                 //Processamento dos dados    
-    }
+    //declara a variável peso
+    //se masculino (ou, if masculino == true)
+    //Math.pow eleva ao quadrado
+    const peso = masculino ? 22 * Math.pow(altura, 2) : 21 * Math.pow(altura, 2)
+    //Processamento dos dados    
 
-frm.addEventListener("reset", () => {
-    resp.innerText = "" //limpa o conteudo exibido no h3 
-})
+
+    frm.addEventListener("reset", () => {
+        resp.innerText = "" //limpa o conteudo exibido no h3 
+    })
     //Apresenta a resposta (altera o conteúdo ao h3 da página)
     resp.innerText = `${nome}: Seu peso ideal é ${peso.toFixed(3)} kg`
 
