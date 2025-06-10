@@ -11,3 +11,4 @@ console.log(cidades.toString())
 console.log(cidades.join(" - "))
 
 //Formas de exibir o conteúdo de um vetor.
+
