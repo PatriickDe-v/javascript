@@ -6,7 +6,7 @@ prompt = require("prompt-sync")()
 
 const clientes = []
 
-console.log("Organize os clientes em ordem de cegada ou 'Fim para sair.")
+console.log("Organize os clientes em ordem de chegada ou 'Fim para sair.")
 
 do {
     const nome = prompt("Nome: ")           //recebe o nome
