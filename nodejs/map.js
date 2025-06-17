@@ -1,3 +1,6 @@
+/*O objetivo do map() é alterar os elementos de um vetor e, no final, criar um novo, com a mesma quantidade de itens
+do vetor original */
+
 const amigos = [
     {nome: "Ana", idade: 20},
     {nome: "Bruno", idade: 17},
