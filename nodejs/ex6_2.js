@@ -9,22 +9,30 @@ const clientes = []
 console.log("Organize os clientes em ordem de chegada ou 'Fim para sair.")
 
 do {
-    const nome = prompt("Nome: ")           //recebe o nome
-
-    if (nome == 'Fim') {                    //verifica 
+    const nome = prompt("Nome: ")       //recebe os dados de nome
+    if (nome == 'Fim') {                 //verifica 
         break
     }
+    const idade = Number(prompt("Idade: "))     //recebe os dados de idade
+    clientes.push({ nome, idade })                //adiciona no vetor clientes
 
-    const idade = Number(prompt("Idade: "))   //recebe a idade
-    clientes.push({ nome, idade })            //adiciona no vetor clientes nome e idade
-    console.log("Ok! Cliente cadastrado...")
+    console.log("Ok, cliente adicionado na fila!")
+
 } while (true) {
+    console.log('Fila preferencial\n')
+    console.log('-'.repeat(40))
+
+    filaPref = clientes.filter(cliente => cliente.idade >= 60)
+    filaPref.forEach((fila, i) => {
+        console.log(`${i + 1}. ${fila.nome}`)
+    })
+
+    console.log("\nFila Normal")
     console.log("-".repeat(40))
 
-    const maioresIdades = idade.reduce((a, b) => Math.max(a, b.idade), 0)
+    const filaNormal = clientes.filter(clientes => clientes.idade < 60)
+    filaNormal.forEach((fila, i) => {
+        console.log(`${i + 1}. ${fila.nome}`)
+    })
 
-    if(idade >= 60) {
-        const preferencial = clientes.filter(cliente => cliente.idade == maioresIdades)
-        
-    }
 }
