@@ -1,32 +1,33 @@
+/*Elaborar um programa que leia o nome e a nota de 'n' alunos até o usuário digitar
+'Fim' no nome. Após verifique e exiba a maior nota da turma. Se a maior nota da turma for
+superior ou igual a 7, exiba os alunos que a obtiveram. Caso contrário, exiba a mensagem
+'Não há alunos em destaque na turma. */
+
 const prompt = require("prompt-sync")()
 
-console.log("Informe os alunos. Após digite 'Fim' no nome para siar")
-
-const alunos = [] 
+const alunos = []               //vetor global
 
 do {
-    const nome = prompt("Nome: ")
-    if (nome == "Fim") {
+    const nome = prompt("Nome: ")           //recebe os dados
+    if (nome == 'Fim') {                    //verifica antes de contiuar o programa
         break
     }
-    
-    const nota = Number(prompt("Nota: "))
-    alunos.push({nome, nota})
-    console.log("Ok! Aluno cadastrado...")
-} while(true) {
-    console.log("\nFila Preferencial")
-    console.log("-".repeat(40))
-    
-    const filaPref = clientes.filter(cliente => cliente.idade >= 60)
-    filaPref.forEach((fila, i) => {
-        console.log(`${i + 1}. ${fila.nome}`)
-    })
 
-    console.log("\nFila Normal")
-    console.log("-".repeat(40))
-    const filaNormal = clientes.filter(cliente => cliente.idade < 60)
-    filaNormal.forEach((fila, i) => {
-        console.log(`${i + 1}. ${fila.nome}`)
-    })
+    const nota = Number(prompt("Nota: "))   //recebe a nota do aluno 
+    alunos.push({ nome, nota })               //adiciona no vetor alunos
+    console.log('Aluno cadastrado com sucesso!')
+} while (true) {
+    console.log('-'.repeat(40))
+    const maior = alunos.reduce((a, b) => Math.max(a, b.nota), 0)   //obtém a maior nota
+    console.log(`Maior nota: ${maior}`)
 
+    if( maior >= 7) {
+        const destaques = alunos.filter(aluno => aluno.nota == maior) //filtro
+
+        for(const destaque of destaques) {
+            console.log(`- ${destaque.nome}`)            //mostra os nomes procedidos por -
+        }
+    } else {
+        console.log("Não há alunos em destaque na turma")
+    }
 }
